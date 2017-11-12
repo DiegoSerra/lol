@@ -12,13 +12,11 @@ export class UserService {
 
   constructor(private http: Http) { }
 
-  create(userName: string) {
-    const observer: Observable<any> = this.http.post('api/user', {userName})
+  create(user: any) {
+    return this.http.post('api/user', user)
       .map((res: Response) => {
         return res.json();
       });
-
-    return observer;
   }
 
   getUser(userName: string) {

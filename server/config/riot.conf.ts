@@ -8,8 +8,8 @@ const {
   } = require('kayn');
 
 export class RiotConfig {
-    static kayn: any;
+    static api: any;
     static init(): void {
-        this.kayn = Kayn(riotConst.key)();
+        this.api = Kayn(riotConst.key)();
     }
 }

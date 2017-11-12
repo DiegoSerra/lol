@@ -6,19 +6,14 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
 Object.defineProperty(exports, "__esModule", { value: true });
+var matchlist_component_1 = require("./matchlist.component");
 var core_1 = require("@angular/core");
-var main_component_1 = require("./main.component");
-var matchlist_component_1 = require("./matchlist/matchlist.component");
+var shared_module_1 = require("../../core/modules/shared.module");
 var router_1 = require("@angular/router");
 var routes = [
     {
         path: '',
-        component: main_component_1.MainComponent,
         children: [
-            {
-                path: 'matchlist',
-                component: matchlist_component_1.MatchlistComponent
-            },
             {
                 path: '',
                 pathMatch: 'full',
@@ -27,18 +22,21 @@ var routes = [
         ]
     }
 ];
-var MainModule = (function () {
-    function MainModule() {
+var MatchlistModule = (function () {
+    function MatchlistModule() {
     }
-    return MainModule;
+    return MatchlistModule;
 }());
-MainModule = __decorate([
+MatchlistModule = __decorate([
     core_1.NgModule({
         imports: [
+            shared_module_1.SharedModule,
             router_1.RouterModule.forChild(routes)
         ],
-        declarations: [main_component_1.MainComponent, matchlist_component_1.MatchlistComponent]
+        declarations: [
+            matchlist_component_1.MatchlistComponent
+        ]
     })
-], MainModule);
-exports.MainModule = MainModule;
-//# sourceMappingURL=main.module.js.map
+], MatchlistModule);
+exports.MatchlistModule = MatchlistModule;
+//# sourceMappingURL=matchlist.module.js.map

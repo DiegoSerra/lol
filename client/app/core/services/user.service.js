@@ -16,12 +16,11 @@ var UserService = (function () {
     function UserService(http) {
         this.http = http;
     }
-    UserService.prototype.create = function (userName) {
-        var observer = this.http.post('api/user', { userName: userName })
+    UserService.prototype.create = function (user) {
+        return this.http.post('api/user', user)
             .map(function (res) {
             return res.json();
         });
-        return observer;
     };
     UserService.prototype.getUser = function (userName) {
         return this.http.get("api/user/" + userName)

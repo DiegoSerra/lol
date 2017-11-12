@@ -6,7 +6,7 @@ var RiotConfig = (function () {
     function RiotConfig() {
     }
     RiotConfig.init = function () {
-        this.kayn = Kayn(riotConst.key)();
+        this.api = Kayn(riotConst.key)();
     };
     return RiotConfig;
 }());

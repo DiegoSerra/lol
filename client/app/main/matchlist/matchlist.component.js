@@ -9,22 +9,21 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-var splash_screen_service_1 = require("./core/services/splash-screen.service");
 var core_1 = require("@angular/core");
-var AppComponent = (function () {
-    function AppComponent(splashScreenService) {
-        this.splashScreenService = splashScreenService;
+var MatchlistComponent = (function () {
+    function MatchlistComponent() {
     }
-    return AppComponent;
+    MatchlistComponent.prototype.ngOnInit = function () {
+    };
+    return MatchlistComponent;
 }());
-AppComponent = __decorate([
+MatchlistComponent = __decorate([
     core_1.Component({
-        selector: 'app-root',
-        templateUrl: './app.component.html',
-        styleUrls: ['./app.component.scss'],
-        encapsulation: core_1.ViewEncapsulation.None
+        selector: 'app-matchlist',
+        templateUrl: './matchlist.component.html',
+        styleUrls: ['./matchlist.component.scss']
     }),
-    __metadata("design:paramtypes", [splash_screen_service_1.SplashScreenService])
-], AppComponent);
-exports.AppComponent = AppComponent;
-//# sourceMappingURL=app.component.js.map
+    __metadata("design:paramtypes", [])
+], MatchlistComponent);
+exports.MatchlistComponent = MatchlistComponent;
+//# sourceMappingURL=matchlist.component.js.map

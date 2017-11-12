@@ -11,13 +11,18 @@ var UserController = (function () {
             .catch(function (error) { return res.status(400).json(error); });
     };
     UserController.createNew = function (req, res, next) {
-        riot_conf_1.RiotConfig.kayn.Summoner.by.name(req.body.userName).region('euw')
+        riot_conf_1.RiotConfig.api.Summoner.by.name(req.body.summonerName).region(req.body.region)
             .then(function (user) {
+            req.user = user;
+            req.region = req.body.region;
             user_dao_1.default.updateOne(user)
-                .then(function (user) { return res.status(200).json(user); })
+                .then(function (user) {
+                // res.status(200).json(user)
+                next();
+            })
                 .catch(function (error) { return res.status(400).json(error); });
         })
-            .catch(function (err) { return console.error(err); });
+            .catch(function (error) { return res.status(404).json(error); });
     };
     return UserController;
 }());

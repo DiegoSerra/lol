@@ -13,13 +13,18 @@ export class UserController {
   }
 
   static createNew(req: any, res: express.Response, next: express.NextFunction) {
-    RiotConfig.kayn.Summoner.by.name(req.body.userName).region('euw')
+    RiotConfig.api.Summoner.by.name(req.body.summonerName).region(req.body.region)
       .then(user => {
+        req.user = user;
+        req.region = req.body.region;
         UserDAO.updateOne(user)
-          .then(user => res.status(200).json(user))
+          .then(user => {
+            // res.status(200).json(user)
+            next();
+          })
           .catch(error => res.status(400).json(error));
       })
-      .catch(err => console.error(err));
+      .catch(error => res.status(404).json(error));
 
   }
 }

@@ -11,7 +11,8 @@ $carded-header-height-without-toolbar: $carded-header-height - $carded-toolbar-h
 $carded-header-height-without-toolbar-sm: $carded-header-height-sm - $carded-toolbar-height;
 
 // Top bg image
-$top-bg-image: url('https://s3.eu-west-2.amazonaws.com/opportumeety.clapps.io/assets/backgrounds/header-bg.png');
+// TODO: url
+$top-bg-image: url('');
 
 .page-layout {
     position: relative;

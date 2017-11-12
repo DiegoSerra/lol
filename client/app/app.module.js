@@ -13,17 +13,27 @@ var http_1 = require("@angular/common/http");
 var http_2 = require("@angular/http");
 var platform_browser_1 = require("@angular/platform-browser");
 var core_1 = require("@angular/core");
+var splash_screen_service_1 = require("./core/services/splash-screen.service");
 var app_component_1 = require("./app.component");
 var user_service_1 = require("./core/services/user.service");
+require("hammerjs");
 var appRoutes = [
     {
         path: '',
         loadChildren: './landing-page/landing-page.module#LandingPageModule'
     },
     {
+        path: 'app',
+        loadChildren: './main/main.module#MainModule'
+    },
+    {
         path: 'pages',
         loadChildren: './pages/pages.module#PagesModule'
     },
+    {
+        path: '**',
+        redirectTo: 'app/matchlist'
+    }
 ];
 var AppModule = (function () {
     function AppModule() {
@@ -44,7 +54,8 @@ AppModule = __decorate([
             shared_module_1.SharedModule,
         ],
         providers: [
-            user_service_1.UserService
+            user_service_1.UserService,
+            splash_screen_service_1.SplashScreenService,
         ],
         bootstrap: [app_component_1.AppComponent]
     })

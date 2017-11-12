@@ -17,8 +17,16 @@ const appRoutes: Routes = [
     loadChildren: './landing-page/landing-page.module#LandingPageModule'
   },
   {
+    path: 'app',
+    loadChildren: './main/main.module#MainModule'
+  },
+  {
     path: 'pages',
     loadChildren: './pages/pages.module#PagesModule'
+  },
+  {
+    path: '**',
+    redirectTo: 'app/matchlist'
   }
 ]
 

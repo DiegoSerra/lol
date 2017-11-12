@@ -1,4 +1,31 @@
-<p>
-  landing-page works!
-</p>
-<button mat-raised-button color="accent" (click)="createUser('cabestroide')">Action</button>
+<div id="main" fxLayout="column">
+    <div id="main-form-wrapper" fxLayout="column" fxLayoutAlign="center center">
+      <div id="main-form">
+
+        <div class="title">BUSCAR INVOCADOR</div>
+
+        <form name="mainForm" [formGroup]="mainForm" novalidate>
+            <mat-form-field>
+              <input matInput placeholder="Nombre de invocador" formControlName="summonerName">
+              <mat-error *ngIf="mainFormErrors.summonerName.required">
+                El Nombre de invocador es <strong>requerido</strong>
+              </mat-error>
+            </mat-form-field>
+
+            <mat-form-field>
+              <mat-select placeholder="Seleccione su región" formControlName="region">
+                <mat-option *ngFor="let region of regions" [value]="region.value">
+                  {{ region.name }}
+                </mat-option>
+              </mat-select>
+            </mat-form-field>
+
+            <button mat-raised-button color="accent" class="submit-button" aria-label="BUSCAR"
+                  [disabled]="mainForm.invalid"
+                  (click)="createUser()">
+            BUSCAR
+          </button>
+        </form>
+      </div>
+    </div>
+</div>
