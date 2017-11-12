@@ -1,4 +1,5 @@
 'use strict';
+import { RiotConfig } from './config/riot.conf';
 
 if (process.env.NEW_RELIC_ENABLED === 'true') require('newrelic');
 
@@ -30,6 +31,7 @@ app.get('*', function (req, res, next) {
 RoutesConfig.init(app);
 DBConfig.init();
 Routes.init(app, express.Router());
+RiotConfig.init();
 
 const server = http.createServer(app);
 

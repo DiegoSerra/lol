@@ -1,3 +1,4 @@
+import { UserService } from '../core/services/user.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,9 +8,22 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LandingPageComponent implements OnInit {
 
-  constructor() { }
+  constructor(private userService: UserService) { }
 
   ngOnInit() {
   }
 
+  createUser(userName: string) {
+    this.userService.create(userName)
+      .subscribe(result => {
+        window.location.href = result.redirectPath || '/app';
+      })
+  }
+
+  findUser(userName: string) {
+    this.userService.getUser(userName)
+      .subscribe(user => {
+        console.log(user);
+      })
+  }
 }

@@ -7,18 +7,20 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
-var AppComponent = (function () {
-    function AppComponent() {
-        this.title = 'app';
+var common_1 = require("@angular/common");
+var main_component_1 = require("./main.component");
+var MainModule = (function () {
+    function MainModule() {
     }
-    return AppComponent;
+    return MainModule;
 }());
-AppComponent = __decorate([
-    core_1.Component({
-        selector: 'app-root',
-        templateUrl: './app.component.html',
-        styleUrls: ['./app.component.scss']
+MainModule = __decorate([
+    core_1.NgModule({
+        imports: [
+            common_1.CommonModule
+        ],
+        declarations: [main_component_1.MainComponent]
     })
-], AppComponent);
-exports.AppComponent = AppComponent;
-//# sourceMappingURL=app.component.js.map
+], MainModule);
+exports.MainModule = MainModule;
+//# sourceMappingURL=main.module.js.map

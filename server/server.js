@@ -1,5 +1,6 @@
 'use strict';
 Object.defineProperty(exports, "__esModule", { value: true });
+var riot_conf_1 = require("./config/riot.conf");
 if (process.env.NEW_RELIC_ENABLED === 'true')
     require('newrelic');
 var PORT = process.env.PORT || 3333;
@@ -24,6 +25,7 @@ app.get('*', function (req, res, next) {
 routes_conf_1.RoutesConfig.init(app);
 db_conf_1.DBConfig.init();
 index_1.Routes.init(app, express.Router());
+riot_conf_1.RiotConfig.init();
 var server = http.createServer(app);
 server.listen(PORT, function () {
     console.log("up and running: " + os.hostname() + " on PORT: " + PORT);

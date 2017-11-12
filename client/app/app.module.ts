@@ -5,8 +5,11 @@ import { HttpClientModule } from '@angular/common/http';
 import { HttpModule } from '@angular/http';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import {SplashScreenService} from './core/services/splash-screen.service';
 
 import { AppComponent } from './app.component';
+import { UserService } from './core/services/user.service';
+import 'hammerjs';
 
 const appRoutes: Routes = [
   {
@@ -16,7 +19,7 @@ const appRoutes: Routes = [
   {
     path: 'pages',
     loadChildren: './pages/pages.module#PagesModule'
-  },
+  }
 ]
 
 @NgModule({
@@ -31,7 +34,10 @@ const appRoutes: Routes = [
     RouterModule.forRoot(appRoutes),
     SharedModule,
   ],
-  providers: [],
+  providers: [
+    UserService,
+    SplashScreenService,
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

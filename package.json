@@ -4,7 +4,9 @@
   "license": "MIT",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
+    "start": "node server/server.js",
+    "heroku-prebuild": "npm prune",
+    "heroku-postbuild": "npm rebuild node-sass && tsc && ng build --environment=\"$NODE_ENV\" --aot",
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
@@ -31,6 +33,7 @@
     "core-js": "^2.4.1",
     "hammerjs": "^2.0.8",
     "helmet": "^3.9.0",
+    "kayn": "^0.4.1",
     "mongoose": "^4.13.1",
     "morgan": "^1.9.0",
     "node-sass": "^4.6.0",
