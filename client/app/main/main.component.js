@@ -10,20 +10,20 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
-var MainComponent = (function () {
+var MainComponent = /** @class */ (function () {
     function MainComponent() {
     }
     MainComponent.prototype.ngOnInit = function () {
     };
+    MainComponent = __decorate([
+        core_1.Component({
+            selector: 'app-main',
+            templateUrl: './main.component.html',
+            styleUrls: ['./main.component.scss']
+        }),
+        __metadata("design:paramtypes", [])
+    ], MainComponent);
     return MainComponent;
 }());
-MainComponent = __decorate([
-    core_1.Component({
-        selector: 'app-main',
-        templateUrl: './main.component.html',
-        styleUrls: ['./main.component.scss']
-    }),
-    __metadata("design:paramtypes", [])
-], MainComponent);
 exports.MainComponent = MainComponent;
 //# sourceMappingURL=main.component.js.map

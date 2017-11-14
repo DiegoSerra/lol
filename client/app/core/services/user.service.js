@@ -11,11 +11,31 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
 var http_1 = require("@angular/http");
+var ngx_cookie_1 = require("ngx-cookie");
+var BehaviorSubject_1 = require("rxjs/BehaviorSubject");
+var _ = require("lodash");
 require("rxjs/add/operator/map");
-var UserService = (function () {
-    function UserService(http) {
+var UserService = /** @class */ (function () {
+    function UserService(http, cookieService) {
         this.http = http;
+        this.cookieService = cookieService;
+        this._userSubject = new BehaviorSubject_1.BehaviorSubject({});
+        this.me();
     }
+    UserService.prototype.me = function () {
+        var _this = this;
+        var token = this.cookieService.get('name');
+        if (token) {
+            this.http.get("api/user/" + token)
+                .map(function (res) {
+                _this.userDecoded = res.json();
+            });
+        }
+        else {
+            this.userDecoded = {};
+        }
+        this._userSubject.next(this.userDecoded);
+    };
     UserService.prototype.create = function (user) {
         return this.http.post('api/user', user)
             .map(function (res) {
@@ -28,11 +48,27 @@ var UserService = (function () {
             return res.json();
         });
     };
+    UserService.prototype.login = function (user) {
+        return this.http.post("api/authenticate", user)
+            .map(function (res) {
+            return res.json();
+        });
+    };
+    UserService.prototype.isSuperAdmin = function () {
+        return _.toLower(this.userDecoded.role) === 'superadmin';
+    };
+    UserService.prototype.isLoggedIn = function () {
+        var token = this.cookieService.get('name');
+        if (token) {
+            return token !== undefined;
+        }
+        return false;
+    };
+    UserService = __decorate([
+        core_1.Injectable(),
+        __metadata("design:paramtypes", [http_1.Http, ngx_cookie_1.CookieService])
+    ], UserService);
     return UserService;
 }());
-UserService = __decorate([
-    core_1.Injectable(),
-    __metadata("design:paramtypes", [http_1.Http])
-], UserService);
 exports.UserService = UserService;
 //# sourceMappingURL=user.service.js.map

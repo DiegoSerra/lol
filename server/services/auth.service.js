@@ -1,6 +1,6 @@
 'use strict';
 Object.defineProperty(exports, "__esModule", { value: true });
-var AuthService = (function () {
+var AuthService = /** @class */ (function () {
     function AuthService() {
     }
     AuthService.needAuthenticate = function (req, res, next) {

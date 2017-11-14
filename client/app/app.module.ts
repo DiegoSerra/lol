@@ -6,12 +6,19 @@ import { HttpModule } from '@angular/http';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import {SplashScreenService} from './core/services/splash-screen.service';
+import {AuthenticationGuard} from './authentication/authentication.guard';
+import {ContentGuard} from './main/content/content.guard';
 
 import { AppComponent } from './app.component';
 import { UserService } from './core/services/user.service';
 import 'hammerjs';
+import { CookieModule } from 'ngx-cookie';
 
 const appRoutes: Routes = [
+  {
+    path: 'auth',
+    loadChildren: './authentication/authentication.module#AuthenticationModule'
+  },
   {
     path: '',
     loadChildren: './landing-page/landing-page.module#LandingPageModule'
@@ -41,10 +48,13 @@ const appRoutes: Routes = [
     BrowserAnimationsModule,
     RouterModule.forRoot(appRoutes),
     SharedModule,
+    CookieModule.forRoot(),
   ],
   providers: [
     UserService,
     SplashScreenService,
+    AuthenticationGuard,
+    ContentGuard
   ],
   bootstrap: [AppComponent]
 })

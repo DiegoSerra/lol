@@ -7,7 +7,7 @@ var bodyParser = require("body-parser");
 var helmet = require("helmet");
 var compression = require("compression");
 var zlib = require("zlib");
-var RoutesConfig = (function () {
+var RoutesConfig = /** @class */ (function () {
     function RoutesConfig() {
     }
     RoutesConfig.init = function (application) {

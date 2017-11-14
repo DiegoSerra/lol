@@ -11,20 +11,20 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var splash_screen_service_1 = require("./core/services/splash-screen.service");
 var core_1 = require("@angular/core");
-var AppComponent = (function () {
+var AppComponent = /** @class */ (function () {
     function AppComponent(splashScreenService) {
         this.splashScreenService = splashScreenService;
     }
+    AppComponent = __decorate([
+        core_1.Component({
+            selector: 'app-root',
+            templateUrl: './app.component.html',
+            styleUrls: ['./app.component.scss'],
+            encapsulation: core_1.ViewEncapsulation.None
+        }),
+        __metadata("design:paramtypes", [splash_screen_service_1.SplashScreenService])
+    ], AppComponent);
     return AppComponent;
 }());
-AppComponent = __decorate([
-    core_1.Component({
-        selector: 'app-root',
-        templateUrl: './app.component.html',
-        styleUrls: ['./app.component.scss'],
-        encapsulation: core_1.ViewEncapsulation.None
-    }),
-    __metadata("design:paramtypes", [splash_screen_service_1.SplashScreenService])
-], AppComponent);
 exports.AppComponent = AppComponent;
 //# sourceMappingURL=app.component.js.map

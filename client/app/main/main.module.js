@@ -8,37 +8,44 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
 var main_component_1 = require("./main.component");
-var matchlist_component_1 = require("./matchlist/matchlist.component");
 var router_1 = require("@angular/router");
 var routes = [
     {
         path: '',
         component: main_component_1.MainComponent,
         children: [
-            {
-                path: 'matchlist',
-                component: matchlist_component_1.MatchlistComponent
-            },
+            // {
+            //   path: 'matchlist',
+            //   component: MatchlistComponent
+            // },
+            // {
+            //   path: '',
+            //   pathMatch: 'full',
+            //   redirectTo: 'app/matchlist'
+            // }
             {
                 path: '',
-                pathMatch: 'full',
-                redirectTo: 'app/matchlist'
+                loadChildren: './content/content.module#ContentModule'
+            },
+            {
+                path: 'admin',
+                loadChildren: './admin/admin.module#AdminModule'
             }
         ]
     }
 ];
-var MainModule = (function () {
+var MainModule = /** @class */ (function () {
     function MainModule() {
     }
+    MainModule = __decorate([
+        core_1.NgModule({
+            imports: [
+                router_1.RouterModule.forChild(routes)
+            ],
+            declarations: [main_component_1.MainComponent]
+        })
+    ], MainModule);
     return MainModule;
 }());
-MainModule = __decorate([
-    core_1.NgModule({
-        imports: [
-            router_1.RouterModule.forChild(routes)
-        ],
-        declarations: [main_component_1.MainComponent, matchlist_component_1.MatchlistComponent]
-    })
-], MainModule);
 exports.MainModule = MainModule;
 //# sourceMappingURL=main.module.js.map

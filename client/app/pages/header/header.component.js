@@ -10,20 +10,20 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
-var HeaderComponent = (function () {
+var HeaderComponent = /** @class */ (function () {
     function HeaderComponent() {
     }
     HeaderComponent.prototype.ngOnInit = function () {
     };
+    HeaderComponent = __decorate([
+        core_1.Component({
+            selector: 'app-header',
+            templateUrl: './header.component.html',
+            styleUrls: ['./header.component.scss']
+        }),
+        __metadata("design:paramtypes", [])
+    ], HeaderComponent);
     return HeaderComponent;
 }());
-HeaderComponent = __decorate([
-    core_1.Component({
-        selector: 'app-header',
-        templateUrl: './header.component.html',
-        styleUrls: ['./header.component.scss']
-    }),
-    __metadata("design:paramtypes", [])
-], HeaderComponent);
 exports.HeaderComponent = HeaderComponent;
 //# sourceMappingURL=header.component.js.map

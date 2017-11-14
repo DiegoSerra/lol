@@ -17,22 +17,22 @@ var routes = [
         component: landing_page_component_1.LandingPageComponent
     }
 ];
-var LandingPageModule = (function () {
+var LandingPageModule = /** @class */ (function () {
     function LandingPageModule() {
     }
+    LandingPageModule = __decorate([
+        core_1.NgModule({
+            imports: [
+                shared_module_1.SharedModule,
+                router_1.RouterModule.forChild(routes),
+                pages_module_1.PagesModule
+            ],
+            declarations: [
+                landing_page_component_1.LandingPageComponent
+            ],
+        })
+    ], LandingPageModule);
     return LandingPageModule;
 }());
-LandingPageModule = __decorate([
-    core_1.NgModule({
-        imports: [
-            shared_module_1.SharedModule,
-            router_1.RouterModule.forChild(routes),
-            pages_module_1.PagesModule
-        ],
-        declarations: [
-            landing_page_component_1.LandingPageComponent
-        ],
-    })
-], LandingPageModule);
 exports.LandingPageModule = LandingPageModule;
 //# sourceMappingURL=landing-page.module.js.map

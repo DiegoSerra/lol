@@ -2,7 +2,7 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 var fs = require("fs");
 var path = require("path");
-var StaticDispatcher = (function () {
+var StaticDispatcher = /** @class */ (function () {
     function StaticDispatcher() {
     }
     StaticDispatcher.sendIndex = function (req, res) {

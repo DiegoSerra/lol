@@ -14,10 +14,17 @@ var http_2 = require("@angular/http");
 var platform_browser_1 = require("@angular/platform-browser");
 var core_1 = require("@angular/core");
 var splash_screen_service_1 = require("./core/services/splash-screen.service");
+var authentication_guard_1 = require("./authentication/authentication.guard");
+var content_guard_1 = require("./main/content/content.guard");
 var app_component_1 = require("./app.component");
 var user_service_1 = require("./core/services/user.service");
 require("hammerjs");
+var ngx_cookie_1 = require("ngx-cookie");
 var appRoutes = [
+    {
+        path: 'auth',
+        loadChildren: './authentication/authentication.module#AuthenticationModule'
+    },
     {
         path: '',
         loadChildren: './landing-page/landing-page.module#LandingPageModule'
@@ -35,30 +42,33 @@ var appRoutes = [
         redirectTo: 'app/matchlist'
     }
 ];
-var AppModule = (function () {
+var AppModule = /** @class */ (function () {
     function AppModule() {
     }
+    AppModule = __decorate([
+        core_1.NgModule({
+            declarations: [
+                app_component_1.AppComponent
+            ],
+            imports: [
+                platform_browser_1.BrowserModule,
+                http_2.HttpModule,
+                http_1.HttpClientModule,
+                animations_1.BrowserAnimationsModule,
+                router_1.RouterModule.forRoot(appRoutes),
+                shared_module_1.SharedModule,
+                ngx_cookie_1.CookieModule.forRoot(),
+            ],
+            providers: [
+                user_service_1.UserService,
+                splash_screen_service_1.SplashScreenService,
+                authentication_guard_1.AuthenticationGuard,
+                content_guard_1.ContentGuard
+            ],
+            bootstrap: [app_component_1.AppComponent]
+        })
+    ], AppModule);
     return AppModule;
 }());
-AppModule = __decorate([
-    core_1.NgModule({
-        declarations: [
-            app_component_1.AppComponent
-        ],
-        imports: [
-            platform_browser_1.BrowserModule,
-            http_2.HttpModule,
-            http_1.HttpClientModule,
-            animations_1.BrowserAnimationsModule,
-            router_1.RouterModule.forRoot(appRoutes),
-            shared_module_1.SharedModule,
-        ],
-        providers: [
-            user_service_1.UserService,
-            splash_screen_service_1.SplashScreenService,
-        ],
-        bootstrap: [app_component_1.AppComponent]
-    })
-], AppModule);
 exports.AppModule = AppModule;
 //# sourceMappingURL=app.module.js.map

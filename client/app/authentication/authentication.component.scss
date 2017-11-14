@@ -1,0 +1,7 @@
+@import "client/app/core/scss/app";
+
+:host {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}

@@ -1,6 +1,6 @@
 'use strict';
 Object.defineProperty(exports, "__esModule", { value: true });
-var ErrorHandler = (function () {
+var ErrorHandler = /** @class */ (function () {
     function ErrorHandler() {
     }
     ErrorHandler.notFound = function (router) {
