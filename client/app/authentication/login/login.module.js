@@ -18,21 +18,21 @@ var routes = [
         canActivate: [authentication_guard_1.AuthenticationGuard]
     }
 ];
-var LoginModule = /** @class */ (function () {
+var LoginModule = (function () {
     function LoginModule() {
     }
-    LoginModule = __decorate([
-        core_1.NgModule({
-            declarations: [
-                login_component_1.LoginComponent
-            ],
-            imports: [
-                shared_module_1.SharedModule,
-                router_1.RouterModule.forChild(routes)
-            ]
-        })
-    ], LoginModule);
     return LoginModule;
 }());
+LoginModule = __decorate([
+    core_1.NgModule({
+        declarations: [
+            login_component_1.LoginComponent
+        ],
+        imports: [
+            shared_module_1.SharedModule,
+            router_1.RouterModule.forChild(routes)
+        ]
+    })
+], LoginModule);
 exports.LoginModule = LoginModule;
 //# sourceMappingURL=login.module.js.map

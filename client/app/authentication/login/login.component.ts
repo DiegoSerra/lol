@@ -8,9 +8,23 @@ import {MatSnackBar} from '@angular/material';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
-  styleUrls: ['../authentication.scss', './login.component.scss']
+  styleUrls: ['../authentication.component.scss', './login.component.scss']
 })
 export class LoginComponent implements OnInit {
+  regions = [
+    { name:'BRASIL', value: 'br'},
+    { name:'EUROPA', value: 'eune'},
+    { name:'EUROPE OESTE', value: 'euw'},
+    { name:'KOREA', value: 'kr'},
+    { name:'NORTEAMERICA LATINA', value: 'lan'},
+    { name:'SUDAMERICA', value: 'las'},
+    { name:'NORTEAMERICA', value: 'na'},
+    { name:'OCEANIA', value: 'oce'},
+    { name:'RUSIA', value: 'ru'},
+    { name:'TURQUIA', value: 'tr'},
+    { name:'JAPON', value: 'jp'},
+  ];
+
   loginForm: FormGroup;
   loginFormErrors: any;
 
@@ -59,6 +73,7 @@ export class LoginComponent implements OnInit {
     this.userService.login(this.loginForm.value)
       .subscribe(
         (result) => {
+          this.userService.me();
           window.location.href = result.redirectPath || '/app';
         },
         (error) => {

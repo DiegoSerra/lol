@@ -11,22 +11,22 @@ var core_1 = require("@angular/core");
 var pages_component_1 = require("./pages.component");
 var header_component_1 = require("./header/header.component");
 var footer_component_1 = require("./footer/footer.component");
-var PagesModule = /** @class */ (function () {
+var PagesModule = (function () {
     function PagesModule() {
     }
-    PagesModule = __decorate([
-        core_1.NgModule({
-            imports: [
-                shared_module_1.SharedModule
-            ],
-            declarations: [
-                pages_component_1.PagesComponent,
-                header_component_1.HeaderComponent,
-                footer_component_1.FooterComponent
-            ]
-        })
-    ], PagesModule);
     return PagesModule;
 }());
+PagesModule = __decorate([
+    core_1.NgModule({
+        imports: [
+            shared_module_1.SharedModule
+        ],
+        declarations: [
+            pages_component_1.PagesComponent,
+            header_component_1.HeaderComponent,
+            footer_component_1.FooterComponent
+        ]
+    })
+], PagesModule);
 exports.PagesModule = PagesModule;
 //# sourceMappingURL=pages.module.js.map

@@ -10,20 +10,20 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
-var AuthenticationComponent = /** @class */ (function () {
+var AuthenticationComponent = (function () {
     function AuthenticationComponent() {
     }
     AuthenticationComponent.prototype.ngOnInit = function () {
     };
-    AuthenticationComponent = __decorate([
-        core_1.Component({
-            selector: 'app-authentication',
-            templateUrl: './authentication.component.html',
-            styleUrls: ['./authentication.component.scss']
-        }),
-        __metadata("design:paramtypes", [])
-    ], AuthenticationComponent);
     return AuthenticationComponent;
 }());
+AuthenticationComponent = __decorate([
+    core_1.Component({
+        selector: 'app-authentication',
+        templateUrl: './authentication.component.html',
+        styleUrls: ['./authentication.component.scss']
+    }),
+    __metadata("design:paramtypes", [])
+], AuthenticationComponent);
 exports.AuthenticationComponent = AuthenticationComponent;
 //# sourceMappingURL=authentication.component.js.map

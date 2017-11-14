@@ -19,6 +19,7 @@ const UserSchema = new mongoose.Schema({
     type: String,
     default: 'user'
   },
+  region: String,
   hashedPassword: {
     type: String,
     validate: [

@@ -12,7 +12,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
 var router_1 = require("@angular/router");
 var user_service_1 = require("../../core/services/user.service");
-var AdminGuard = /** @class */ (function () {
+var AdminGuard = (function () {
     function AdminGuard(userService, router) {
         this.userService = userService;
         this.router = router;
@@ -26,11 +26,11 @@ var AdminGuard = /** @class */ (function () {
         }
         return true;
     };
-    AdminGuard = __decorate([
-        core_1.Injectable(),
-        __metadata("design:paramtypes", [user_service_1.UserService, router_1.Router])
-    ], AdminGuard);
     return AdminGuard;
 }());
+AdminGuard = __decorate([
+    core_1.Injectable(),
+    __metadata("design:paramtypes", [user_service_1.UserService, router_1.Router])
+], AdminGuard);
 exports.AdminGuard = AdminGuard;
 //# sourceMappingURL=admin.guard.js.map

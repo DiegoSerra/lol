@@ -10,18 +10,18 @@ var core_1 = require("@angular/core");
 var content_component_1 = require("./content.component");
 var shared_module_1 = require("../../core/modules/shared.module");
 var matchlist_component_1 = require("./matchlist/matchlist.component");
-var ContentModule = /** @class */ (function () {
+var ContentModule = (function () {
     function ContentModule() {
     }
-    ContentModule = __decorate([
-        core_1.NgModule({
-            imports: [
-                shared_module_1.SharedModule,
-            ],
-            declarations: [content_component_1.ContentComponent, matchlist_component_1.MatchlistComponent]
-        })
-    ], ContentModule);
     return ContentModule;
 }());
+ContentModule = __decorate([
+    core_1.NgModule({
+        imports: [
+            shared_module_1.SharedModule,
+        ],
+        declarations: [content_component_1.ContentComponent, matchlist_component_1.MatchlistComponent]
+    })
+], ContentModule);
 exports.ContentModule = ContentModule;
 //# sourceMappingURL=content.module.js.map

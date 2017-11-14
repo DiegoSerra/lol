@@ -10,26 +10,26 @@ var core_1 = require("@angular/core");
 var forms_1 = require("@angular/forms");
 var common_1 = require("@angular/common");
 var material_module_1 = require("./material.module");
-var SharedModule = /** @class */ (function () {
+var SharedModule = (function () {
     function SharedModule() {
     }
-    SharedModule = __decorate([
-        core_1.NgModule({
-            imports: [
-                common_1.CommonModule,
-                forms_1.FormsModule,
-                material_module_1.MaterialModule,
-                forms_1.ReactiveFormsModule,
-            ],
-            exports: [
-                common_1.CommonModule,
-                forms_1.FormsModule,
-                material_module_1.MaterialModule,
-                forms_1.ReactiveFormsModule,
-            ]
-        })
-    ], SharedModule);
     return SharedModule;
 }());
+SharedModule = __decorate([
+    core_1.NgModule({
+        imports: [
+            common_1.CommonModule,
+            forms_1.FormsModule,
+            material_module_1.MaterialModule,
+            forms_1.ReactiveFormsModule,
+        ],
+        exports: [
+            common_1.CommonModule,
+            forms_1.FormsModule,
+            material_module_1.MaterialModule,
+            forms_1.ReactiveFormsModule,
+        ]
+    })
+], SharedModule);
 exports.SharedModule = SharedModule;
 //# sourceMappingURL=shared.module.js.map

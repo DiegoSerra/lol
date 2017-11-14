@@ -10,20 +10,20 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
-var MatchlistComponent = /** @class */ (function () {
+var MatchlistComponent = (function () {
     function MatchlistComponent() {
     }
     MatchlistComponent.prototype.ngOnInit = function () {
     };
-    MatchlistComponent = __decorate([
-        core_1.Component({
-            selector: 'app-matchlist',
-            templateUrl: './matchlist.component.html',
-            styleUrls: ['./matchlist.component.scss']
-        }),
-        __metadata("design:paramtypes", [])
-    ], MatchlistComponent);
     return MatchlistComponent;
 }());
+MatchlistComponent = __decorate([
+    core_1.Component({
+        selector: 'app-matchlist',
+        templateUrl: './matchlist.component.html',
+        styleUrls: ['./matchlist.component.scss']
+    }),
+    __metadata("design:paramtypes", [])
+], MatchlistComponent);
 exports.MatchlistComponent = MatchlistComponent;
 //# sourceMappingURL=matchlist.component.js.map

@@ -15,7 +15,7 @@ var ngx_cookie_1 = require("ngx-cookie");
 var BehaviorSubject_1 = require("rxjs/BehaviorSubject");
 var _ = require("lodash");
 require("rxjs/add/operator/map");
-var UserService = /** @class */ (function () {
+var UserService = (function () {
     function UserService(http, cookieService) {
         this.http = http;
         this.cookieService = cookieService;
@@ -64,11 +64,11 @@ var UserService = /** @class */ (function () {
         }
         return false;
     };
-    UserService = __decorate([
-        core_1.Injectable(),
-        __metadata("design:paramtypes", [http_1.Http, ngx_cookie_1.CookieService])
-    ], UserService);
     return UserService;
 }());
+UserService = __decorate([
+    core_1.Injectable(),
+    __metadata("design:paramtypes", [http_1.Http, ngx_cookie_1.CookieService])
+], UserService);
 exports.UserService = UserService;
 //# sourceMappingURL=user.service.js.map

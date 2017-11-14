@@ -1,7 +1,7 @@
 'use strict';
 
 import * as express from 'express';
-import UserDao from '../api/user/user.dao';
+import UserDao from '../user/user.dao';
 
 
 export class AuthService {

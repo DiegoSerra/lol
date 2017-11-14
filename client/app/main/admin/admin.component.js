@@ -10,20 +10,20 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
-var AdminComponent = /** @class */ (function () {
+var AdminComponent = (function () {
     function AdminComponent() {
     }
     AdminComponent.prototype.ngOnInit = function () {
     };
-    AdminComponent = __decorate([
-        core_1.Component({
-            selector: 'app-admin',
-            templateUrl: './admin.component.html',
-            styleUrls: ['./admin.component.scss']
-        }),
-        __metadata("design:paramtypes", [])
-    ], AdminComponent);
     return AdminComponent;
 }());
+AdminComponent = __decorate([
+    core_1.Component({
+        selector: 'app-admin',
+        templateUrl: './admin.component.html',
+        styleUrls: ['./admin.component.scss']
+    }),
+    __metadata("design:paramtypes", [])
+], AdminComponent);
 exports.AdminComponent = AdminComponent;
 //# sourceMappingURL=admin.component.js.map

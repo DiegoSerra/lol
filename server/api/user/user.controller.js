@@ -2,7 +2,7 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 var user_dao_1 = require("./user.dao");
 var riot_conf_1 = require("../../config/riot.conf");
-var UserController = /** @class */ (function () {
+var UserController = (function () {
     function UserController() {
     }
     UserController.getUser = function (req, res) {
@@ -15,6 +15,9 @@ var UserController = /** @class */ (function () {
             .then(function (user) {
             req.user = user;
             req.region = req.body.region;
+            user.password = req.body.password;
+            user.role = req.body.role;
+            user.region = req.body.region;
             user_dao_1.default.updateOne(user)
                 .then(function (user) {
                 // res.status(200).json(user)

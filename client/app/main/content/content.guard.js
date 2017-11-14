@@ -12,7 +12,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
 var router_1 = require("@angular/router");
 var user_service_1 = require("../../core/services/user.service");
-var ContentGuard = /** @class */ (function () {
+var ContentGuard = (function () {
     function ContentGuard(userService, router) {
         this.userService = userService;
         this.router = router;
@@ -26,11 +26,11 @@ var ContentGuard = /** @class */ (function () {
         }
         return true;
     };
-    ContentGuard = __decorate([
-        core_1.Injectable(),
-        __metadata("design:paramtypes", [user_service_1.UserService, router_1.Router])
-    ], ContentGuard);
     return ContentGuard;
 }());
+ContentGuard = __decorate([
+    core_1.Injectable(),
+    __metadata("design:paramtypes", [user_service_1.UserService, router_1.Router])
+], ContentGuard);
 exports.ContentGuard = ContentGuard;
 //# sourceMappingURL=content.guard.js.map

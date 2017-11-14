@@ -16,7 +16,7 @@ var core_1 = require("@angular/core");
 var common_1 = require("@angular/common");
 var animations_1 = require("@angular/animations");
 var router_1 = require("@angular/router");
-var SplashScreenService = /** @class */ (function () {
+var SplashScreenService = (function () {
     function SplashScreenService(animationBuilder, document, router) {
         var _this = this;
         this.animationBuilder = animationBuilder;
@@ -62,12 +62,12 @@ var SplashScreenService = /** @class */ (function () {
             _this.player.play();
         }, 0);
     };
-    SplashScreenService = __decorate([
-        core_1.Injectable(),
-        __param(1, core_1.Inject(common_1.DOCUMENT)),
-        __metadata("design:paramtypes", [animations_1.AnimationBuilder, Object, router_1.Router])
-    ], SplashScreenService);
     return SplashScreenService;
 }());
+SplashScreenService = __decorate([
+    core_1.Injectable(),
+    __param(1, core_1.Inject(common_1.DOCUMENT)),
+    __metadata("design:paramtypes", [animations_1.AnimationBuilder, Object, router_1.Router])
+], SplashScreenService);
 exports.SplashScreenService = SplashScreenService;
 //# sourceMappingURL=splash-screen.service.js.map

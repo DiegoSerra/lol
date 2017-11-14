@@ -9,18 +9,18 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
 var common_1 = require("@angular/common");
 var admin_component_1 = require("./admin.component");
-var AdminModule = /** @class */ (function () {
+var AdminModule = (function () {
     function AdminModule() {
     }
-    AdminModule = __decorate([
-        core_1.NgModule({
-            imports: [
-                common_1.CommonModule
-            ],
-            declarations: [admin_component_1.AdminComponent]
-        })
-    ], AdminModule);
     return AdminModule;
 }());
+AdminModule = __decorate([
+    core_1.NgModule({
+        imports: [
+            common_1.CommonModule
+        ],
+        declarations: [admin_component_1.AdminComponent]
+    })
+], AdminModule);
 exports.AdminModule = AdminModule;
 //# sourceMappingURL=admin.module.js.map

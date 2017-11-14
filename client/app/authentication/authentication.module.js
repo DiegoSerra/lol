@@ -20,6 +20,10 @@ var appRoutes = [
                 loadChildren: './login/login.module#LoginModule'
             },
             {
+                path: 'register',
+                loadChildren: './register/register.module#RegisterModule'
+            },
+            {
                 path: '',
                 pathMatch: 'full',
                 redirectTo: 'auth/login'
@@ -27,19 +31,19 @@ var appRoutes = [
         ]
     }
 ];
-var AuthenticationModule = /** @class */ (function () {
+var AuthenticationModule = (function () {
     function AuthenticationModule() {
     }
-    AuthenticationModule = __decorate([
-        core_1.NgModule({
-            imports: [
-                shared_module_1.SharedModule,
-                router_1.RouterModule.forChild(appRoutes)
-            ],
-            declarations: [authentication_component_1.AuthenticationComponent]
-        })
-    ], AuthenticationModule);
     return AuthenticationModule;
 }());
+AuthenticationModule = __decorate([
+    core_1.NgModule({
+        imports: [
+            shared_module_1.SharedModule,
+            router_1.RouterModule.forChild(appRoutes)
+        ],
+        declarations: [authentication_component_1.AuthenticationComponent]
+    })
+], AuthenticationModule);
 exports.AuthenticationModule = AuthenticationModule;
 //# sourceMappingURL=authentication.module.js.map

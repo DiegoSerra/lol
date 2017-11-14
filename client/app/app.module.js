@@ -42,33 +42,33 @@ var appRoutes = [
         redirectTo: 'app/matchlist'
     }
 ];
-var AppModule = /** @class */ (function () {
+var AppModule = (function () {
     function AppModule() {
     }
-    AppModule = __decorate([
-        core_1.NgModule({
-            declarations: [
-                app_component_1.AppComponent
-            ],
-            imports: [
-                platform_browser_1.BrowserModule,
-                http_2.HttpModule,
-                http_1.HttpClientModule,
-                animations_1.BrowserAnimationsModule,
-                router_1.RouterModule.forRoot(appRoutes),
-                shared_module_1.SharedModule,
-                ngx_cookie_1.CookieModule.forRoot(),
-            ],
-            providers: [
-                user_service_1.UserService,
-                splash_screen_service_1.SplashScreenService,
-                authentication_guard_1.AuthenticationGuard,
-                content_guard_1.ContentGuard
-            ],
-            bootstrap: [app_component_1.AppComponent]
-        })
-    ], AppModule);
     return AppModule;
 }());
+AppModule = __decorate([
+    core_1.NgModule({
+        declarations: [
+            app_component_1.AppComponent
+        ],
+        imports: [
+            platform_browser_1.BrowserModule,
+            http_2.HttpModule,
+            http_1.HttpClientModule,
+            animations_1.BrowserAnimationsModule,
+            router_1.RouterModule.forRoot(appRoutes),
+            shared_module_1.SharedModule,
+            ngx_cookie_1.CookieModule.forRoot(),
+        ],
+        providers: [
+            user_service_1.UserService,
+            splash_screen_service_1.SplashScreenService,
+            authentication_guard_1.AuthenticationGuard,
+            content_guard_1.ContentGuard
+        ],
+        bootstrap: [app_component_1.AppComponent]
+    })
+], AppModule);
 exports.AppModule = AppModule;
 //# sourceMappingURL=app.module.js.map

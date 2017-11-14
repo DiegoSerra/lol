@@ -34,18 +34,18 @@ var routes = [
         ]
     }
 ];
-var MainModule = /** @class */ (function () {
+var MainModule = (function () {
     function MainModule() {
     }
-    MainModule = __decorate([
-        core_1.NgModule({
-            imports: [
-                router_1.RouterModule.forChild(routes)
-            ],
-            declarations: [main_component_1.MainComponent]
-        })
-    ], MainModule);
     return MainModule;
 }());
+MainModule = __decorate([
+    core_1.NgModule({
+        imports: [
+            router_1.RouterModule.forChild(routes)
+        ],
+        declarations: [main_component_1.MainComponent]
+    })
+], MainModule);
 exports.MainModule = MainModule;
 //# sourceMappingURL=main.module.js.map

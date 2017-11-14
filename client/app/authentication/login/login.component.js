@@ -13,11 +13,24 @@ var core_1 = require("@angular/core");
 var forms_1 = require("@angular/forms");
 var user_service_1 = require("../../core/services/user.service");
 var material_1 = require("@angular/material");
-var LoginComponent = /** @class */ (function () {
+var LoginComponent = (function () {
     function LoginComponent(formBuilder, userService, snackBar) {
         this.formBuilder = formBuilder;
         this.userService = userService;
         this.snackBar = snackBar;
+        this.regions = [
+            { name: 'BRASIL', value: 'br' },
+            { name: 'EUROPA', value: 'eune' },
+            { name: 'EUROPE OESTE', value: 'euw' },
+            { name: 'KOREA', value: 'kr' },
+            { name: 'NORTEAMERICA LATINA', value: 'lan' },
+            { name: 'SUDAMERICA', value: 'las' },
+            { name: 'NORTEAMERICA', value: 'na' },
+            { name: 'OCEANIA', value: 'oce' },
+            { name: 'RUSIA', value: 'ru' },
+            { name: 'TURQUIA', value: 'tr' },
+            { name: 'JAPON', value: 'jp' },
+        ];
         this.loginFormErrors = {
             summonerName: {},
             region: {},
@@ -53,22 +66,23 @@ var LoginComponent = /** @class */ (function () {
         var _this = this;
         this.userService.login(this.loginForm.value)
             .subscribe(function (result) {
+            _this.userService.me();
             window.location.href = result.redirectPath || '/app';
         }, function (error) {
             _this.snackBar.open('Usuario o contraseña incorrecto', '', { duration: 5000 });
         });
     };
-    LoginComponent = __decorate([
-        core_1.Component({
-            selector: 'app-login',
-            templateUrl: './login.component.html',
-            styleUrls: ['../authentication.scss', './login.component.scss']
-        }),
-        __metadata("design:paramtypes", [forms_1.FormBuilder,
-            user_service_1.UserService,
-            material_1.MatSnackBar])
-    ], LoginComponent);
     return LoginComponent;
 }());
+LoginComponent = __decorate([
+    core_1.Component({
+        selector: 'app-login',
+        templateUrl: './login.component.html',
+        styleUrls: ['../authentication.component.scss', './login.component.scss']
+    }),
+    __metadata("design:paramtypes", [forms_1.FormBuilder,
+        user_service_1.UserService,
+        material_1.MatSnackBar])
+], LoginComponent);
 exports.LoginComponent = LoginComponent;
 //# sourceMappingURL=login.component.js.map

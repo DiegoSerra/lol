@@ -13,7 +13,7 @@ var user_service_1 = require("../core/services/user.service");
 var core_1 = require("@angular/core");
 var forms_1 = require("@angular/forms");
 var material_1 = require("@angular/material");
-var LandingPageComponent = /** @class */ (function () {
+var LandingPageComponent = (function () {
     function LandingPageComponent(userService, formBuilder, snackBar) {
         this.userService = userService;
         this.formBuilder = formBuilder;
@@ -75,15 +75,15 @@ var LandingPageComponent = /** @class */ (function () {
             console.log(user);
         });
     };
-    LandingPageComponent = __decorate([
-        core_1.Component({
-            selector: 'app-landing-page',
-            templateUrl: './landing-page.component.html',
-            styleUrls: ['./landing-page.component.scss']
-        }),
-        __metadata("design:paramtypes", [user_service_1.UserService, forms_1.FormBuilder, material_1.MatSnackBar])
-    ], LandingPageComponent);
     return LandingPageComponent;
 }());
+LandingPageComponent = __decorate([
+    core_1.Component({
+        selector: 'app-landing-page',
+        templateUrl: './landing-page.component.html',
+        styleUrls: ['./landing-page.component.scss']
+    }),
+    __metadata("design:paramtypes", [user_service_1.UserService, forms_1.FormBuilder, material_1.MatSnackBar])
+], LandingPageComponent);
 exports.LandingPageComponent = LandingPageComponent;
 //# sourceMappingURL=landing-page.component.js.map

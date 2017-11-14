@@ -3,10 +3,12 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var user_route_1 = require("../api/user/user.route");
 var index_1 = require("../commons/static/index");
 var error_handler_config_1 = require("../config/error-handler.config");
-var Routes = /** @class */ (function () {
+var auth_route_1 = require("../api/auth/auth.route");
+var Routes = (function () {
     function Routes() {
     }
     Routes.init = function (app, router) {
+        auth_route_1.AuthRoutes.init(router);
         user_route_1.UserRoutes.init(router);
         error_handler_config_1.ErrorHandler.notFound(router);
         router

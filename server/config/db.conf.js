@@ -2,7 +2,7 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 var mongoose = require("mongoose");
 var dbConst = require("../constants/" + process.env.NODE_ENV + "/db.json");
-var DBConfig = /** @class */ (function () {
+var DBConfig = (function () {
     function DBConfig() {
     }
     DBConfig.init = function () {

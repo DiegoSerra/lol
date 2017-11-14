@@ -12,7 +12,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
 var router_1 = require("@angular/router");
 var user_service_1 = require("../core/services/user.service");
-var AuthenticationGuard = /** @class */ (function () {
+var AuthenticationGuard = (function () {
     function AuthenticationGuard(userService, router) {
         this.userService = userService;
         this.router = router;
@@ -23,11 +23,11 @@ var AuthenticationGuard = /** @class */ (function () {
         }
         return true;
     };
-    AuthenticationGuard = __decorate([
-        core_1.Injectable(),
-        __metadata("design:paramtypes", [user_service_1.UserService, router_1.Router])
-    ], AuthenticationGuard);
     return AuthenticationGuard;
 }());
+AuthenticationGuard = __decorate([
+    core_1.Injectable(),
+    __metadata("design:paramtypes", [user_service_1.UserService, router_1.Router])
+], AuthenticationGuard);
 exports.AuthenticationGuard = AuthenticationGuard;
 //# sourceMappingURL=authentication.guard.js.map

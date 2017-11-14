@@ -2,7 +2,7 @@
 
 import * as express from 'express';
 import {UserController} from './user.controller';
-import { AuthService } from '../../services/auth.service';
+import { AuthService } from '../auth/auth.service';
 
 export class UserRoutes {
   static init(router: express.Router) {

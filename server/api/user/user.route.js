@@ -1,8 +1,8 @@
 'use strict';
 Object.defineProperty(exports, "__esModule", { value: true });
 var user_controller_1 = require("./user.controller");
-var auth_service_1 = require("../../services/auth.service");
-var UserRoutes = /** @class */ (function () {
+var auth_service_1 = require("../auth/auth.service");
+var UserRoutes = (function () {
     function UserRoutes() {
     }
     UserRoutes.init = function (router) {
